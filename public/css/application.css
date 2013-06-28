@@ -1,0 +1,26 @@
+.container {
+  margin: 20px auto;
+  width: 600px;
+  padding: 0px 20px 20px 20px;
+  border: 1px dotted black;
+}
+th {
+  text-align: left;
+}
+
+span, ul, ul li {
+  display: inline-block;
+}
+
+ul li {
+  margin-right: 10px;
+  border-bottom: 4px solid #525C65;
+  background-color: cyan;
+  height: 20px;
+  padding: 0 5px 0 5px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: black;
+}

@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Welcome to my first fucking Blog</h1>
+
+  <span><h3>Navigation</h3></span>
+  <ul>
+    <li><a href="/posts/new">Create New Post</a></li>
+    <li><a href="/">View All Posts</a></li>
+  </ul>
+
+  <form method="get" action="/tag/search">
+    <input type="text" placeholder="search for posts" name="search">
+    <input type="submit" value="Search">
+  </form>
+
+  <%= "<p>Could Not Find Any Posts</p>" if @posts.blank? %>
+
+  <% @posts.each do |post| %>
+    <%= erb :post, :locals => { :post => post } %>
+    <a href="/posts/show/<%= post.id %>">View</a>
+    <a href="/posts/edit/<%= post.id %>">Edit</a>
+    <a href="/posts/delete/<%= post.id %>">Delete</a>
+    <br>
+  <% end %>
+
+</div>

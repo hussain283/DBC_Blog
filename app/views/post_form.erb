@@ -1,0 +1,31 @@
+<div class="container">
+  <h1>Do you really think, anyone is ever going to read this?</h1>
+
+  <% if @post.errors %>
+    <p style="color:red"><%= @post.errors.full_messages %></p>
+    <br>
+  <% end %>
+
+
+  <% if @post.id == nil %>
+    <form method="post" action="/posts/create">
+  <% else %>
+    <form method="post" action="/posts/update/<%= @post.id %>">
+  <% end %>
+    <input type="text" placeholder="Title Goes Here" value="<%= @post.title %>" name="post[title]">
+    <br>
+    <br>
+    <textarea cols="40" rows="6" type="text" placeholder="Start Typing" name="post[content]"><%= @post.content %></textarea>
+    <br>
+    <br>
+    <input type="text" placeholder="Enter Tags here seperated by commas" value="<%= get_tags(@post.id) %>" name="tags">
+    <br>
+    <br>
+
+  <% if @post.id == nil %>
+    <input type="submit" value="Create!">   
+  <% else %>
+    <input type="submit" value="Update!">   
+  <% end %>
+  </form>
+</div>

@@ -1,0 +1,9 @@
+<div class="post">
+  <h2><%= post.title %></h2>
+  <p class="content">
+    <%= post.content %>
+  </p>
+  <% post.tags.each do |tag| %>
+    <%= tag.name %>
+  <% end %>
+</div>
